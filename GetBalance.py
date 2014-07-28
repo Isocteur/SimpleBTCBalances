@@ -6,7 +6,8 @@ root = Tk()
 root.wm_title("Blockchain.info Balances")
 text = Text(root)
 scrollbar = Scrollbar(root)
-scrollbar.pack( side = RIGHT, fill=Y )
+scrollbar.pack( side = RIGHT, fill = Y )
+scrollbar.config( command = text.yview )
 
 with open('addr.txt', 'r') as f:
     for line in f:
@@ -19,9 +20,8 @@ with open('addr.txt', 'r') as f:
 		text.insert(INSERT, line)
 		text.insert(INSERT, sdata)
 		text.insert(INSERT, ' BTC')
-		text.insert(END, '\n' )
-
+		text.insert(INSERT, '\n')	
+		
+text.insert(END, '\n' )
 text.pack()
-text.pack( side = LEFT, fill = BOTH )
-scrollbar.config( command = text.yview )
 mainloop()
