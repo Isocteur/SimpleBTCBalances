@@ -22,6 +22,6 @@ with open('addr.txt', 'r') as f:
 		text.insert(INSERT, ' BTC')
 		text.insert(INSERT, '\n')	
 		
-text.insert(END, '\n' )
+text.insert(END, '\n')
 text.pack()
 mainloop()
