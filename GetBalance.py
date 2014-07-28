@@ -16,12 +16,8 @@ with open('addr.txt', 'r') as f:
 		response = urllib.urlopen(url);
 		data = json.loads(response.read())
 		sdata = format(data / 100000000.0, '.8f')
-		text.insert(INSERT, '\n')	
-		text.insert(INSERT, line)
-		text.insert(INSERT, sdata)
-		text.insert(INSERT, ' BTC')
-		text.insert(INSERT, '\n')	
-		
+		text.insert(INSERT, '\n' + line + sdata + ' BTC\n')	
+
 text.insert(END, '\n')
 text.pack()
 mainloop()
