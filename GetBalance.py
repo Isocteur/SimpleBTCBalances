@@ -8,7 +8,6 @@ text = Text(root)
 scrollbar = Scrollbar(root)
 scrollbar.pack( side = RIGHT, fill=Y )
 
-mylist = Listbox(root, yscrollcommand = scrollbar.set )
 with open('addr.txt', 'r') as f:
     for line in f:
 		addr = line
@@ -21,7 +20,6 @@ with open('addr.txt', 'r') as f:
 		text.insert(INSERT, sdata)
 		text.insert(INSERT, ' BTC')
 		text.insert(END, '\n' )
-
 
 text.pack()
 text.pack( side = LEFT, fill = BOTH )
